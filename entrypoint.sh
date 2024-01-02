@@ -29,4 +29,4 @@ if [ -e "$data_dir/dhcpd.leases~" ]; then
     chown dhcpd:dhcpd "$data_dir/dhcpd.leases~"
 fi
 
-exec /usr/sbin/dhcpd -4 -d -f --no-pid -cf "$data_dir/dhcpd.conf" -lf "$data_dir/dhcpd.leases" -user dhcpd -group dhcpd
+exec /usr/sbin/dhcpd -4 -d -f --no-pid -cf "$data_dir/dhcpd.conf" -lf "$data_dir/dhcpd.leases" -user dhcpd -group dhcpd -p 67
