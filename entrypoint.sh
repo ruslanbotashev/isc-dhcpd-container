@@ -22,9 +22,6 @@ dhcpd_uid=$(id -u dhcpd)
 if [ $gid -ne 0 ]; then
     groupmod -og $gid dhcpd
 fi
-if [ $uid -ne $dhcpd_uid ]; then
-    usermod -ou $uid dhcpd
-fi
 
 [ -e "$data_dir/dhcpd.leases" ] || touch "$data_dir/dhcpd.leases"
 chown dhcpd:dhcpd "$data_dir/dhcpd.leases"
